@@ -27,8 +27,11 @@ export default function GlobalChatScreen() {
         data={messages}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View style={styles.messageBubble}>
-            <Text>{item.text}</Text>
+          <View>
+            <Text>Username</Text>
+            <View style={styles.messageBubble}>
+              <Text>{item.text}</Text>
+            </View>
           </View>
         )}
         contentContainerStyle={{ padding: 10 }}
