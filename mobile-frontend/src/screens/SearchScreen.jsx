@@ -1,7 +1,6 @@
 import React from "react";
-import { Text, View } from "react-native";
-
-export default function Home() {
+import { View, Text } from "react-native";
+export default function SearchScreen() {
   return (
     <View>
       <View>
