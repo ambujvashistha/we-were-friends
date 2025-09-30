@@ -5,31 +5,88 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  FlatList,
 } from "react-native";
 
 export default function GlobalChatScreen() {
   const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([
+    { id: "1", text: "Hello everyone!" },
+    { id: "2", text: "Hey, how’s it going?" },
+  ]);
+
+  const handleSend = () => {
+    if (message.trim() === "") return;
+    setMessages([...messages, { id: Date.now().toString(), text: message }]);
+    setMessage("");
+  };
+
   return (
-    <View>
-      <View></View>
-      <View>
+    <View style={styles.container}>
+      {/* Messages List */}
+      <FlatList
+        data={messages}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <View style={styles.messageBubble}>
+            <Text>{item.text}</Text>
+          </View>
+        )}
+        contentContainerStyle={{ padding: 10 }}
+      />
+
+      {/* Input Area */}
+      <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
+          placeholder="Type a message..."
           value={message}
-          onChangeText={() => {}}
+          onChangeText={setMessage}
         />
-        <TouchableOpacity>
-          <Text>Send</Text>
+        <TouchableOpacity style={styles.sendButton} onPress={handleSend}>
+          <Text style={styles.sendText}>Send</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  messageBubble: {
+    backgroundColor: "#f0f0f0",
+    padding: 10,
+    marginVertical: 5,
+    borderRadius: 8,
+    alignSelf: "flex-start", // later you can check if userId === myId → flex-end
+  },
+  inputContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderTopWidth: 1,
+    borderColor: "#ddd",
+    padding: 8,
+  },
   textInput: {
-    width: 80,
-    height: 30,
-    borderWidth: 2,
-    borderColor: "black",
+    flex: 1,
+    height: 40,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 20,
+    paddingHorizontal: 12,
+  },
+  sendButton: {
+    marginLeft: 8,
+    backgroundColor: "#007bff",
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 20,
+  },
+  sendText: {
+    color: "#fff",
+    fontWeight: "bold",
   },
 });
