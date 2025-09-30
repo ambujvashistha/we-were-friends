@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
 export default function GlobalChatScreen() {
   const [message, setMessage] = useState("");
@@ -12,6 +18,9 @@ export default function GlobalChatScreen() {
           value={message}
           onChangeText={() => {}}
         />
+        <TouchableOpacity>
+          <Text>Send</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
