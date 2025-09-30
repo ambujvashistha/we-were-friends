@@ -23,7 +23,6 @@ export default function GlobalChatScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Messages List */}
       <FlatList
         data={messages}
         keyExtractor={(item) => item.id}
@@ -35,7 +34,6 @@ export default function GlobalChatScreen() {
         contentContainerStyle={{ padding: 10 }}
       />
 
-      {/* Input Area */}
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
@@ -61,7 +59,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 5,
     borderRadius: 8,
-    alignSelf: "flex-start", // later you can check if userId === myId → flex-end
+    alignSelf: "flex-start",
   },
   inputContainer: {
     flexDirection: "row",
