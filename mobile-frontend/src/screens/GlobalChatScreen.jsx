@@ -1,6 +1,6 @@
 import React from "react";
-import { Text } from "react-native-gesture-handler";
+import { Text } from "react-native";
 
 export default function GlobalChatScreen() {
-  return <Text>Global Chat</Text>;
+  return;
 }
