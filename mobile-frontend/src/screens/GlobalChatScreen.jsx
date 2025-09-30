@@ -43,6 +43,7 @@ export default function GlobalChatScreen() {
           placeholder="Type a message..."
           value={message}
           onChangeText={setMessage}
+          onSubmitEditing={handleSend}
         />
         <TouchableOpacity style={styles.sendButton} onPress={handleSend}>
           <Text style={styles.sendText}>Send</Text>
