@@ -13,7 +13,17 @@ export default function ProfileScreen() {
         />
       </View>
 
-      <View></View>
+      <View>
+        <View>
+          <Text>Username</Text>
+        </View>
+
+        <View>
+          <Text>Followers</Text>
+          <Text>Following</Text>
+          <Text>Memos</Text>
+        </View>
+      </View>
       <View></View>
       <View></View>
       <Text>Profile</Text>
