@@ -15,18 +15,20 @@ export default function ProfileScreen() {
 
         {/* Stats */}
         <View style={styles.statsContainer}>
-          <View style={styles.stat}>
+          <TouchableOpacity style={styles.stat}>
             <Text style={styles.statNumber}>54</Text>
             <Text style={styles.statLabel}>Posts</Text>
-          </View>
-          <View style={styles.stat}>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.stat}>
             <Text style={styles.statNumber}>834</Text>
             <Text style={styles.statLabel}>Followers</Text>
-          </View>
-          <View style={styles.stat}>
-            <Text style={styles.statNumber}>162</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.stat}>
+            <Text style={styles.statNumber}>23</Text>
             <Text style={styles.statLabel}>Following</Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
 
