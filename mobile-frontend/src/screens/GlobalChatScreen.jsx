@@ -28,7 +28,7 @@ export default function GlobalChatScreen() {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View>
-            <Text>Username</Text>
+            <Text style={styles.senderUsername}>Username</Text>
             <View style={styles.messageBubble}>
               <Text>{item.text}</Text>
             </View>
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignSelf: "flex-start",
   },
+  senderUsername: { opacity: 0.6 },
   inputContainer: {
     flexDirection: "row",
     alignItems: "center",
