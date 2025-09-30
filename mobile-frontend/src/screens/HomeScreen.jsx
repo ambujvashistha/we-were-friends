@@ -5,7 +5,6 @@ export default function HomeScreen() {
   return (
     <View>
       <View>
-        <FlatList />
         <Text>View 1</Text>
       </View>
       <View>
