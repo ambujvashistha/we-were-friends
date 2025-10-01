@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Camera() {
+  const [facing, setFacing] = useState("back");
   const [permission, requestPermission] = useCameraPermissions();
 
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function Camera() {
 
     askPermission();
   }, []);
+
   if (!permission) {
     return <View />;
   }
@@ -30,6 +32,21 @@ export default function Camera() {
       </View>
     );
   }
+
+  function toggleCameraFacing() {
+    setFacing((current) => (current === "back" ? "front" : "back"));
+  }
+
+  return (
+    <View style={styles.container}>
+      <CameraView style={styles.camera} facing={facing} />
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
+          <Text style={styles.text}>Flip Camera</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
