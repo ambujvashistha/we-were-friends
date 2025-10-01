@@ -41,6 +41,11 @@ export default function Camera() {
     <View style={styles.container}>
       <CameraView style={styles.camera} facing={facing} />
       <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text>photu</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
           <Text style={styles.text}>Flip Camera</Text>
         </TouchableOpacity>
@@ -52,14 +57,15 @@ export default function Camera() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    alignItems: "center",
   },
   message: {
     textAlign: "center",
     paddingBottom: 10,
   },
   camera: {
-    flex: 1,
+    height: 300,
+    width: 300,
   },
   buttonContainer: {
     position: "absolute",
@@ -72,10 +78,20 @@ const styles = StyleSheet.create({
   button: {
     flex: 1,
     alignItems: "center",
+    backgroundColor: "#2196F3",
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 6,
+    marginTop: 12,
   },
   text: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
+  },
+  image: {
+    height: 300,
+    width: 300,
+    paddingTop: 10,
   },
 });
