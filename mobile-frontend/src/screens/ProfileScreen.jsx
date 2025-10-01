@@ -13,7 +13,6 @@ export default function ProfileScreen() {
           }}
         />
 
-        {/* Stats */}
         <View style={styles.statsContainer}>
           <TouchableOpacity style={styles.stat}>
             <Text style={styles.statNumber}>54</Text>
@@ -32,7 +31,6 @@ export default function ProfileScreen() {
         </View>
       </View>
 
-      {/* Username + Bio */}
       <View style={styles.bioSection}>
         <Text style={styles.username}>Username</Text>
         <Text style={styles.bio}>
