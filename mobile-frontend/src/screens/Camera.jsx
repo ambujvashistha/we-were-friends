@@ -42,7 +42,7 @@ export default function Camera() {
       <CameraView style={styles.camera} facing={facing} />
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button}>
-          <Text>photu</Text>
+          <Text>Capture</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.buttonContainer}>
