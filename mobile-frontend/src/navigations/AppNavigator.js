@@ -9,8 +9,8 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigator() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Explore" component={SearchScreen} />
+      {/* <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Explore" component={SearchScreen} /> */}
       <Tab.Screen name="Camera" component={Camera} />
       <Tab.Screen name="Global Chat" component={GlobalChatScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
